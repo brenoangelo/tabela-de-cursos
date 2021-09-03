@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pratica1';
+  title = 'Tabela de Cursos';
+  novoCurso: any = ''
+
+  onMudouCurso(evento:any){
+    this.novoCurso = evento
+  }
 }

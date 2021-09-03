@@ -1,0 +1,57 @@
+<section>
+    <div class="container">
+       
+        <div class="row">
+            <div class="col">
+                <h1>{{ cursos.length }}
+                  {{ 
+                    cursos.length > 1 ? 
+                    'Cursos disponiveis' :
+                    'Curso disponivel'
+                  }}
+                </h1>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Curso</th>
+                        <th scope="col">Carga Horária</th>
+                        <th scope="col">Valor</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let curso of cursos">
+                        <td>{{ curso.nome }}</td>
+                        <td>{{ curso.horas }}h</td>
+                        <td>R$ {{ curso.valor }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-group col mb-3">
+                <input class="form-control " type="text" placeholder="Nome do curso..." 
+              [(ngModel)]="nome">
+            </div>
+
+            <div class="input-group col mb-3">
+                <span class="input-group-text">Horas</span>
+                <input class="form-control" type="number" placeholder="Carga horaria..."
+                [(ngModel)]="horas">
+            </div>
+            
+            <div class="input-group col mb-3">
+                <span class="input-group-text">R$</span>
+                <input class="form-control" type="number" placeholder="Valor do curso..."
+                [(ngModel)]="valor">
+            </div>
+
+            <div class="input-group col mb-3">
+                <button class="btn btn-primary"
+                  (click)="addCurso()">
+                    Add</button>
+            </div>
+        </div>
+    </div>
+</section>
